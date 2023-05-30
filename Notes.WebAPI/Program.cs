@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using Notes.Persistance;
+using Serilog;
+
 
 namespace Notes.WebAPI
 {
@@ -24,7 +26,7 @@ namespace Notes.WebAPI
                 }
                 catch(Exception exception)
                 {
-
+                    Log.Fatal(exception, "An error occurred while app initialization");
                 }
             }
 
